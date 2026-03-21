@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+
+# local runtime/debug
+.env
+error_403.html
+error_logout.html
+error_no_form.html
+vps_debug.html
+cf_fail_debug.html
+cf_debug.html
+downloaded_files/
+
+# editor
+.vscode/
+.idea/
+.DS_Store
