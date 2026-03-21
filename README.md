@@ -1,10 +1,23 @@
 # autofaucet
 
+![Python](https://img.shields.io/badge/Python-Automation-3776AB?logo=python&logoColor=white)
+![Browser](https://img.shields.io/badge/Browser-SeleniumBase-43B02A)
+![Focus](https://img.shields.io/badge/Focus-Cloudflare%20%2B%20Turnstile-111827)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+
 Python automation template for the AutoFaucet claim flow, including Turnstile solving, Cloudflare bypass assistance via SeleniumBase, and local debug capture for blocked sessions.
 
-This public candidate is prepared as a **safe showcase version** of a private debug-oriented working setup. Live cookies, claim endpoints, API keys, and local debug artifacts are intentionally removed or converted into environment variables.
+This public candidate is prepared as a safe showcase version of a private debug-oriented working setup. Live cookies, claim endpoints, API keys, and local debug artifacts are intentionally removed or converted into environment variables.
 
-## What is included
+## Highlights
+
+- requests-based claim loop template
+- browser-assisted Cloudflare fallback path
+- direct solver and 2Captcha-assisted modes
+- explicit local env model for sensitive runtime data
+- debug HTML capture when blocked or malformed states appear
+
+## Included files
 
 - `template_bot.py` - sanitized claim-flow template
 - `cf_bypasser.py` - SeleniumBase helper for Cloudflare/Turnstile interception and browser-session sync
@@ -13,15 +26,7 @@ This public candidate is prepared as a **safe showcase version** of a private de
 - `.env.example`
 - `LICENSE`
 
-## What is intentionally excluded
-
-- live cookies
-- live claim POST endpoint values
-- 2Captcha API keys
-- local debug HTML captures
-- downloaded SeleniumBase lock/runtime files
-
-## Setup
+## Quick start
 
 ```bash
 python3 -m venv .venv
@@ -47,9 +52,9 @@ Optional:
 - `AUTOFAUCET_DIRECT_SOLVER_API_URL`
 - `AUTOFAUCET_HEADLESS`
 
-## Project behavior
+## Runtime shape
 
-The sanitized template preserves the original workflow shape:
+The public template preserves this general flow:
 
 1. prepare a requests session with browser-like headers
 2. hydrate local login cookie state
@@ -58,6 +63,10 @@ The sanitized template preserves the original workflow shape:
 5. solve Turnstile directly or via browser-assisted fallback
 6. submit the claim payload to the configured POST endpoint
 7. save debug HTML locally when blocked or malformed states appear
+
+## Documentation
+
+- `docs/FLOW.md`
 
 ## Security notes
 
